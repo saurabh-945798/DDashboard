@@ -1,0 +1,149 @@
+
+/* Dashboard.css */
+
+@media (max-width: 768px) {
+    aside {
+      display: none; /* Hide sidebar on small devices */
+    }
+  
+    /* Add styles for a toggle button to show the sidebar */
+    .sidebar-toggle {
+      display: block;
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1000; /* Ensure it's above other elements */
+      background: #4A90E2;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    .sidebar-visible aside {
+      display: block; /* Show sidebar when toggle class is active */
+      position: absolute; /* Change positioning to allow overlay */
+      height: 100%; /* Full height */
+      z-index: 999; /* Below the toggle */
+    }
+  
+    .sidebar-visible main {
+      margin-left: 250px; /* Push main content to the right when sidebar is visible */
+    }
+  }
+  
+  .sidebar-toggle {
+    display: none; /* Hide toggle button on larger devices */
+  }
+  
+.chart-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .chart-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.3), rgba(0, 0, 0, 0.5));
+    z-index: 0;
+    opacity: 0.5; /* Adjust opacity for desired effect */
+    pointer-events: none;
+  }
+  
+  .chart-glow > * {
+    position: relative;
+    z-index: 1;
+  }
+
+
+
+  
+  
+  body {
+    transition: background-color 0.3s ease;
+  }
+  
+  .light-theme {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .navbar {
+    background-color: #4a90e2;
+  }
+  
+  .card-glow {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card-glow:hover {
+    box-shadow: 0 4px 20px rgba(74, 144, 226, 0.5);
+  }
+  
+
+  .card-glow {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1), 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .card-glow:hover {
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2), 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+  }
+  
+  /* Pulse Animation */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 5px rgba(0, 183, 255, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0, 183, 255, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(0, 183, 255, 0.4);
+    }
+  }
+  
+  /* 3D Hover Card Effect */
+  .card-hover {
+    transition: transform 0.3s, border 0.3s;
+    transform-style: preserve-3d;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-10px) rotateY(5deg);
+  }
+  
+  /* Neon Border Effect on Hover */
+  .card-hover:hover {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 183, 255, 0.6), 0 0 20px rgba(0, 183, 255, 0.7);
+  }
+  
+  /* Add subtle rotation on hover */
+  .card-hover:hover {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Glow and pulse effect */
+  .card-pulse {
+    animation: pulse 2s infinite;
+  }
+  
